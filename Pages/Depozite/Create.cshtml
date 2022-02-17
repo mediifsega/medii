@@ -1,0 +1,49 @@
+﻿@page
+@model Bereschi_Gabriel_Depozit.Pages.Depozite.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Depozit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Depozit.Nume" class="control-label"></label>
+                <input asp-for="Depozit.Nume" class="form-control" />
+                <span asp-validation-for="Depozit.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Depozit.Adresa" class="control-label"></label>
+                <input asp-for="Depozit.Adresa" class="form-control" />
+                <span asp-validation-for="Depozit.Adresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Depozit.Capacitate" class="control-label"></label>
+                <input asp-for="Depozit.Capacitate" class="form-control" />
+                <span asp-validation-for="Depozit.Capacitate" class="text-danger"></span>
+            </div>
+            <label asp-for="Depozit.IDProprietar" class="control-label">Nume proprietar</label>
+            <select asp-for="Depozit.IDProprietar" class="form-control" asp-items="ViewBag.IDProprietar">
+            </select>
+            <span asp-validation-for="Depozit.IDProprietar" class="text-danger"></span>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
